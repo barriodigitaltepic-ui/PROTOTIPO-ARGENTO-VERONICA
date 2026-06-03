@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Argento | Terra Vida Coto Lucca</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html{scroll-behavior:smooth;}
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:#f2f6f0;
+  color:#173b25;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.hero{
+  min-height:100vh;
+  background:url('images/argento-hero.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  color:white;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(0,45,20,.35), rgba(0,25,10,.88));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  padding:30px;
+}
+
+.logo{
+  width:200px;
+  margin-bottom:25px;
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:76px;
+  color:#fff;
+  margin:10px 0;
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  color:#0f4d2a;
+  text-align:center;
+  margin-bottom:20px;
+}
+
+h3{
+  color:#0f4d2a;
+  font-size:26px;
+}
+
+.sub{
+  font-size:22px;
+  letter-spacing:2px;
+  color:#d7f5df;
+}
+
+.section{
+  padding:90px 8%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.section-verde{
+  background:
+  linear-gradient(rgba(242,246,240,.96),rgba(242,246,240,.96)),
+  url('images/hoja-pattern.png');
+  background-size:cover;
+  background-position:center;
+}
+
+.card{
+  background:#fff;
+  color:#173b25;
+  border-radius:22px;
+  padding:40px;
+  box-shadow:0 18px 45px rgba(0,0,0,.12);
+  border:1px solid rgba(15,77,42,.15);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  margin-top:35px;
+}
+
+.price-box{
+  margin:30px auto;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.price{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.45);
+  padding:18px 30px;
+  border-radius:40px;
+  font-size:22px;
+  font-weight:700;
+  color:#fff;
+}
+
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:16px 34px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+  background:#0f4d2a;
+  color:#fff;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  background:#176b3a;
+}
+
+.secondary{
+  background:transparent;
+  border:1px solid #fff;
+}
+
+.lista{
+  padding-left:22px;
+}
+
+.model{
+  text-align:center;
+}
+
+.model h3{
+  margin-top:0;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
+}
+
+.gallery img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.full-img{
+  width:65%;
+  max-width:850px;
+  height:auto;
+  display:block;
+  margin:auto;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.full-img-wide{
+  width:100%;
+  max-width:1200px;
+  height:auto;
+  display:block;
+  margin:auto;
+  border-radius:18px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  cursor:pointer;
+}
+
+.modal-img{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.modal-img img{
+  max-width:92%;
+  max-height:90%;
+  border-radius:15px;
+}
+
+.cerrar{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:50px;
+  color:white;
+  cursor:pointer;
+}
+
+footer{
+  background:#0f2f1e;
+  color:#d8e8dc;
+  text-align:center;
+  padding:55px 20px;
+}
+
+@media(max-width:768px){
+  h1{font-size:46px;}
+  h2{font-size:30px;}
+  .section{padding:70px 6%;}
+  .full-img{width:100%;}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<div class="overlay"></div>
+<div class="hero-content">
+
+<img src="images/logo.png" class="logo">
+
+<h1>ARGENTO</h1>
+<p class="sub">Coto Lucca | Terra Vida</p>
+
+<p>
+Diseño amplio para familias que buscan mayor comodidad. Casa de 2 niveles con 3 recámaras, 3 baños completos, cochera para 2 autos y opción de crecimiento futuro.
+</p>
+
+<div class="price-box">
+  <div class="price">90 m² Terreno</div>
+  <div class="price">89.82 m² Construcción</div>
+</div>
+
+<a class="btn secondary" href="https://barriodigitaltepic-ui.github.io/TIERRA-VIVA-VERONICA/">
+Volver a Terra Vida
+</a>
+
+</div>
+</section>
+
+<section class="section section-verde">
+<h2>Prototipo Argento</h2>
+
+<div class="card" style="text-align:center;">
+<p>
+El modelo <strong>Argento</strong> es una vivienda de mayor amplitud dentro de <strong>Coto Lucca</strong>, diseñada para familias que buscan espacios funcionales, comodidad y la posibilidad de crecimiento a futuro.
+</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Características Principales</h2>
+
+<div class="grid">
+
+<div class="card model">
+<h3>3 Recámaras</h3>
+<p>Espacios diseñados para toda la familia.</p>
+</div>
+
+<div class="card model">
+<h3>3 Baños Completos</h3>
+<p>Mayor comodidad y privacidad.</p>
+</div>
+
+<div class="card model">
+<h3>2 Niveles</h3>
+<p>Distribución inteligente para áreas sociales y privadas.</p>
+</div>
+
+<div class="card model">
+<h3>2 Cajones</h3>
+<p>Cochera para dos vehículos.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Distribución</h2>
+
+<div class="card">
+<img src="images/argento-plano.jpg" class="full-img" onclick="abrirImagen(this.src)">
+</div>
+</section>
+
+<section class="section section-verde">
+<h2>Tu Casa Crece Contigo</h2>
+
+<div class="card" style="text-align:center;">
+<p>
+Una de las principales ventajas del modelo Argento es su capacidad de crecimiento. Su diseño permite futuras ampliaciones para adaptar la vivienda a nuevas etapas de vida, aumentar espacios y fortalecer el valor patrimonial de la propiedad.
+</p>
+
+<img src="images/argento-crecimiento.jpg" class="full-img-wide" onclick="abrirImagen(this.src)">
+</div>
+
+<div class="grid">
+
+<div class="card model">
+<h3>Tercera Planta</h3>
+<p>Preparación para futuras ampliaciones que permiten incrementar el área habitable de la vivienda.</p>
+</div>
+
+<div class="card model">
+<h3>Mayor Plusvalía</h3>
+<p>La posibilidad de crecimiento aumenta el valor patrimonial y el potencial de inversión de la propiedad.</p>
+</div>
+
+<div class="card model">
+<h3>Espacios Flexibles</h3>
+<p>Adapta tu hogar a nuevas necesidades familiares con áreas adicionales para recámaras, estudio o terraza.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+<h2>Amenidades de Coto Lucca</h2>
+
+<div class="grid">
+<div class="card model"><h3>Alberca</h3></div>
+<div class="card model"><h3>Casa Club</h3></div>
+<div class="card model"><h3>Área Infantil</h3></div>
+<div class="card model"><h3>Multicancha</h3></div>
+<div class="card model"><h3>Áreas Verdes</h3></div>
+<div class="card model"><h3>Área de Asadores</h3></div>
+<div class="card model"><h3>Seguridad</h3></div>
+</div>
+</section>
+
+<section class="section">
+<h2>Especificaciones Constructivas</h2>
+
+<div class="card">
+<ul class="lista">
+<li>Vivienda de dos niveles.</li>
+<li>Cimentación a base de losa llena y contratrabes en concreto armado.</li>
+<li>Losa de entrepiso de concreto armado.</li>
+<li>Altura interior de 2.40 m en planta baja y planta alta.</li>
+<li>Aplanado interior de yeso con pintura vinílica.</li>
+<li>Aplanado exterior con mortero y pintura vinílica.</li>
+<li>Sala-comedor, cocina, 3 recámaras y 3 baños completos.</li>
+<li>Huellas de concreto escobillado para dos autos y pasto en cochera.</li>
+<li>Patio de servicio en concreto escobillado.</li>
+<li>Ventanería de aluminio natural sin anodizar.</li>
+<li>Puertas principal y secundaria Eucaplac.</li>
+<li>Domos de acrílico blanco con ventilación.</li>
+<li>Piso de cerámica color beige.</li>
+<li>Lavabos con pedestal en baños.</li>
+<li>Inodoro de grado ecológico.</li>
+<li>Mezcladoras cromadas en lavabo y tarja.</li>
+<li>Accesorios completos de baño.</li>
+<li>Tarja de acero inoxidable.</li>
+<li>Lavadero prefabricado.</li>
+<li>Tinaco de 800 litros.</li>
+<li>Calentador de paso de 6 litros.</li>
+<li>Impermeabilizante prefabricado de 3.5 mm color blanco.</li>
+<li>Preparación para tanque de gas estacionario en azotea (no incluye tanque).</li>
+</ul>
+</div>
+</section>
+
+<section class="section">
+<h2>Galería</h2>
+
+<div class="gallery">
+<img src="images/argento-1.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-2.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-3.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-4.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-5.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-6.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-7.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-8.jpg" onclick="abrirImagen(this.src)">
+<img src="images/argento-9.jpg" onclick="abrirImagen(this.src)">
+</div>
+</section>
+
+<section class="section">
+<h2>Master Plan Coto Lucca</h2>
+
+<div class="card">
+<img src="images/argento-masterplan.jpg" class="full-img-wide" onclick="abrirImagen(this.src)">
+</div>
+</section>
+
+<section class="section">
+<div class="card" style="text-align:center;">
+<h2>Conoce Argento</h2>
+
+<p>
+Argento ha sido diseñado para quienes valoran el equilibrio entre funcionalidad, confort y crecimiento patrimonial. Un hogar que brinda espacios amplios, acabados de calidad y la posibilidad de adaptarse a las necesidades de tu familia con el paso del tiempo.
+</p>
+
+<a class="btn" href="https://barriodigitaltepic-ui.github.io/TIERRA-VIVA-VERONICA/">
+Volver a Terra Vida
+</a>
+</div>
+</section>
+
+<footer>
+<strong>Torrez & Maldonado Real Estate Solutions</strong><br>
+Especialistas en inversión y bienes raíces<br>
+Puerto Vallarta • Riviera Nayarit • Tepic Nayarit
+</footer>
+
+<div id="modalImg" class="modal-img" onclick="cerrarImagen()">
+<span class="cerrar">&times;</span>
+<img id="imgGrande">
+</div>
+
+<script>
+function abrirImagen(src){
+  document.getElementById("modalImg").style.display="flex";
+  document.getElementById("imgGrande").src=src;
+}
+
+function cerrarImagen(){
+  document.getElementById("modalImg").style.display="none";
+}
+</script>
+
+</body>
+</html>
